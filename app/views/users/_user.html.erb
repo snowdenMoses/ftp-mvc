@@ -1,35 +1,32 @@
-<div id="<%= dom_id product %>">
-<p class="my-5">
-<strong class="block font-medium mb-1">Name:</strong>
-    <%= product.name %>
+<div id="<%= dom_id user %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Full Name:</strong>
+    <%= user&.personal_detail&.full_name %>
   </p>
 
-<p class="my-5">
-<strong class="block font-medium mb-1">Price:</strong>
-    <%= product.price %>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Date of Birth:</strong>
+    <%= user&.personal_detail&.date_of_birth.strftime("%d, %a %m %y") %>
   </p>
 
-<p class="my-5">
-<strong class="block font-medium mb-1">Stock:</strong>
-    <%= product.stock %>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Email:</strong>
+    <%= user&.email %>
   </p>
 
-<p class="my-5">
-<strong class="block font-medium mb-1">Description:</strong>
-    <%= product.description %>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Phone Number:</strong>
+    <%= user&.personal_detail&.phone_number %>
   </p>
-<p class="my-5">
-<strong class="block font-medium mb-1">Vendor:</strong>
-    <%= product.user.personal_detail.full_name %>
-  </p>
-<p class="my-5">
-<strong class="block font-medium mb-1">Category(s):</strong>
-    <%= product.categories.map{|category| category.title.capitalize}.join(", ") %>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">City:</strong>
+    <%= user&.personal_detail&.city %>
   </p>
 
-<% if action_name != "show" %>
-<%= link_to "Show this product", product, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "Edit this product", edit_product_path(product), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-<hr class="mt-6">
-<% end %>
+
+  <% if action_name != "show" %>
+    <%#= link_to "Show this product", product, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%#= link_to "Edit this product", edit_product_path(product), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
 </div>

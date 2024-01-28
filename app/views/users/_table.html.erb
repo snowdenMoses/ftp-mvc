@@ -3,45 +3,39 @@
     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
     <tr>
       <th scope="col" class="px-6 py-3">
-        Product name
+        Full name
       </th>
       <th scope="col" class="px-6 py-3">
-        Price
+        Email address
       </th>
       <th scope="col" class="px-6 py-3">
-        Category
+        Phone Number
       </th>
       <th scope="col" class="px-6 py-3">
-        Description
+        Gender
       </th>
       <th scope="col" class="px-6 py-3">
-        Stock
-      </th>
-      <th scope="col" class="px-6 py-3">
-        Vendor
+        City
       </th>
     </tr>
     </thead>
     <tbody>
-    <% products.each do |product| %>
+    <% users.each do |user| %>
       <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <%= link_to product.name, product_path(product) %>
+          <%= link_to user&.personal_detail&.full_name, user_path(user) %>
         </th>
         <td class="px-6 py-4">
-          $<%= product.price %>
+          <%= user&.email %>
         </td>
         <td class="px-6 py-4">
-          <%= product.categories.map{|category| category.title.capitalize}.join(",") if product.categories.any? %>
+          <%= user&.personal_detail&.phone_number %>
         </td>
         <td class="px-6 py-4">
-          <%= product.description %>
+          <%= user&.personal_detail&.gender %>
         </td>
         <td class="px-6 py-4">
-          <%= product.stock %>
-        </td>
-        <td class="px-6 py-4" >
-          <%= product.user.personal_detail.full_name %>
+          <%= user&.personal_detail&.city %>
         </td>
       </tr>
     <% end %>
