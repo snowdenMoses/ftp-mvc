@@ -1,5 +1,14 @@
 <div id="<%= dom_id product %>">
   <p class="my-5">
+    <strong class="block font-medium mb-1">Image:</strong>
+    <% if product.images.any? %>
+      <% product.images.each do |image| %>
+        <%= image_tag image, class: "w-40 h-40 mb-1"%>
+      <% end %>
+    <% end %>
+  </p>
+
+  <p class="my-5">
     <strong class="block font-medium mb-1">Name:</strong>
     <%= product.name %>
   </p>
@@ -20,11 +29,11 @@
   </p>
   <p class="my-5">
     <strong class="block font-medium mb-1">Vendor:</strong>
-    <%= product.user.personal_detail.full_name %>
+    <%= product&.user&.personal_detail&.full_name %>
   </p>
   <p class="my-5">
     <strong class="block font-medium mb-1">Category(s):</strong>
-    <%= product.categories.map{|category| category.title.capitalize}.join(", ") %>
+    <%= product.categories.map { |category| category.title.capitalize }.join(", ") %>
   </p>
 
   <% if action_name != "show" %>

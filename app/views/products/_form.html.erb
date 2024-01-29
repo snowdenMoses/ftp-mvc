@@ -38,6 +38,13 @@
     <%= form.collection_check_boxes :categories, Category.all, :id, :title %>
   </div>
 
+  <div class="my-5">
+    <div class="mb-3">
+      <%= form.label :images, class: "inline-block"%>
+    </div>
+    <%= form.file_field :images,multiple: true, class: "inline-block"%>
+  </div>
+
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>

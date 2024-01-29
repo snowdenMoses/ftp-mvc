@@ -21,6 +21,7 @@ class ProductsController < AdminController
 
   # POST /products or /products.json
   def create
+    binding.pry
     @product = Product.new(product_params.except(:categories))
     @product.user = current_user
     respond_to do |format|
@@ -72,6 +73,6 @@ class ProductsController < AdminController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :price, :stock, :description, categories: [])
+      params.require(:product).permit(:name, :price, :stock, :description, categories: [], images: [])
     end
 end
