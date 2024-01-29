@@ -6,7 +6,7 @@
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Date of Birth:</strong>
-    <%= user&.personal_detail&.date_of_birth.strftime("%d, %a %m %y") %>
+    <%= user&.personal_detail&.date_of_birth&.strftime("%d, %a %m %y") %>
   </p>
 
   <p class="my-5">

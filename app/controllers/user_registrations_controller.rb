@@ -1,43 +1,30 @@
 class UserRegistrationsController < Devise::RegistrationsController
-  layout "admin", only: [:new]
   def new
-    super
     @user = User.new
+    @user.build_personal_detail
   end
 
   def create
-    # super
-    @user.create(set_registration_params[:user_info])
+    @user = User.new(set_registration_params)
+
     respond_to do |format|
-        if @user.save
-          # product_params[:categories].reject(&:empty?).each do |category_id|
-          #   @product.category_products.create(category_id: category_id.to_i)
-          # end
-          format.html { redirect_to user_url(@user), notice: "Account has been created successfully." }
-          format.json { render :show, status: :created, location: @user }
-        else
-          format.html { render :new, status: :unprocessable_entity }
-          format.json { render json: @user.errors, status: :unprocessable_entity }
-        end
+      if @user.save
+        sign_in(@user)
+        format.html { redirect_to :home_root, notice: "Welcome! Your account has been created successfully." }
+      else
+        @user.build_personal_detail
+        format.html { render "devise/registrations/new", status: :unprocessable_entity }
       end
+    end
   end
 
   private
 
   def set_registration_params
-    params.require(:user).permits( user_info: %i[email
-                                                 status
-                                                 terms_and_conditions
-                                                 encrypted_password
-                                                  ],
-                                   personal_details_info: %i[ first_name
-                                                              email
-                                                              date_of_birth
-                                                              phone_number
-                                                              city
-                                                              gender
-                                                              status
-                                                              last_name
-                                                              terms_and_conditions])
+    params.require(:user).permit(:email, :status, :terms_and_conditions,
+                                 :password,
+                                 personal_detail_attributes: [:first_name, :email, :date_of_birth,
+                                                              :phone_number, :city, :gender, :status,
+                                                              :last_name, :middle_name])
   end
 end

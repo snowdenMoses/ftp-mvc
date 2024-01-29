@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  get 'user_registraions/new'
-  get 'user_registraions/create'
-  get 'user_registraions/update'
-  get 'user_registraions/edit'
-  devise_for :users, :controllers => {:user_registrations => "user_registrations"}
+  devise_for :users, :controllers => {:registrations => "user_registrations"}
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -21,5 +17,5 @@ Rails.application.routes.draw do
   get 'personal_details/index'
   resources :products
   resources :users, only: [:index, :show, :edit, :update]
-  resources :user_registration, only: [:new, :create]
+  resources :user_registrations, only: [:new, :create]
 end
