@@ -31,18 +31,21 @@
     <%= form.text_area :description, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="my-5">
-    <div class="mb-3">
-      <%= form.label :categories, class: "inline-block"%>
-    </div>
-    <%= form.collection_check_boxes :categories, Category.all, :id, :title %>
+  <div class="">
+    <div class="form-group">
+      <%= form.collection_check_boxes(:categories, Category.all, :id, :title) do |b| %>
+        <%= b.label class: "mr-3 inline-block align-center" do %>
+          <%= b.check_box%> <%=b.text %>
+        <% end %>
+      <% end %>
+      </div>
   </div>
 
   <div class="my-5">
     <div class="mb-3">
-      <%= form.label :images, class: "inline-block"%>
+      <%= form.label :images, class: "inline-block" %>
     </div>
-    <%= form.file_field :images,multiple: true, class: "inline-block"%>
+    <%= form.file_field :images, multiple: true, class: "inline-block" %>
   </div>
 
   <div class="inline">

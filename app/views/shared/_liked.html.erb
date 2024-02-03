@@ -1,0 +1,3 @@
+<%= form_tag(favourite_path(product.id), method: :delete, id: "#{dom_id(product)}") do %>
+  <%= image_submit_tag "like.svg", width: 25 %>
+<% end %>

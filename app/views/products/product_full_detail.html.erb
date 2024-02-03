@@ -1,0 +1,18 @@
+<% product = @product_details[:product]%>
+<% vendor = @product_details[:user] %>
+
+<div class="grid grid-cols-6 gap-4 flex flex-col mt-8">
+  <div class="col-span-4 bg-green-50 h-auto flex mt-8">
+    <div>
+      <%= product.images.any? ? thumbnail_image_tag(product.images.sample) : image_tag("https://via.placeholder.com/200") %>
+    </div>
+    <div class="flex flex-col ml-2">
+        <span><%= product.name %></span>
+        <span><%= product.price %></span>
+
+    </div>
+  </div>
+  <div class="col-span-2 bg-red-50 h-auto">
+
+  </div>
+</div>

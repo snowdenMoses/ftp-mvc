@@ -86,3 +86,9 @@ gem "pundit", "~> 2.3"
 
 
 gem "will_paginate", "~> 4.0"
+
+gem "chartkick"
+
+gem "groupdate"
+
+gem "jquery-rails", "~> 4.6"

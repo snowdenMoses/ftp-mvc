@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_29_125138) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_30_203410) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,17 +58,28 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_29_125138) do
     t.index ["product_id"], name: "index_category_products_on_product_id"
   end
 
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "product_id", null: false
+    t.integer "status", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_favourites_on_product_id"
+    t.index ["user_id", "product_id"], name: "index_favourites_on_user_id_and_product_id", unique: true
+    t.index ["user_id"], name: "index_favourites_on_user_id"
+  end
+
   create_table "personal_details", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "middle_name"
     t.datetime "date_of_birth", null: false
     t.string "city", null: false
-    t.string "gender", null: false
     t.string "phone_number", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "gender"
     t.index ["user_id"], name: "index_personal_details_on_user_id"
   end
 
@@ -116,6 +127,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_29_125138) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "category_products", "categories"
   add_foreign_key "category_products", "products"
+  add_foreign_key "favourites", "products"
+  add_foreign_key "favourites", "users"
   add_foreign_key "personal_details", "users"
   add_foreign_key "products", "users"
   add_foreign_key "user_roles", "roles"

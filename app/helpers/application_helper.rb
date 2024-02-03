@@ -18,4 +18,8 @@ module ApplicationHelper
   def dashboard_sidebar_li_class
     "flex items-center p-2 text-white hover:text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
   end
+
+  def thumbnail_image_tag(image_src)
+    image_tag(image_src, class: "image_class")
+  end
 end

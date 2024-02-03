@@ -1,0 +1,14 @@
+<%= turbo_stream.replace "#{dom_id(@product)}" do %>
+  <%= render "shared/unliked", product: @product %>
+<% end %>
+
+<%= turbo_stream.replace "favourite_products" do %>
+  <%#= render "shared/all_products", products: @favourite_products %>
+  <%= turbo_frame_tag "favourite_products" do %>
+    <%= render "shared/all_products", products: @favourite_products %>
+  <% end %>
+<% end %>
+
+<%= turbo_stream.update 'favourite_counter' do %>
+  <%= @users_favourite_counter %>
+<% end %>

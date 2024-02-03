@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+.image_class{
+    height: 200px;
+    weight: 200px;
+    object-fit: cover;
+}
+
+.favorite-button {
+    background-color: #ddd;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #000;
+    text-decoration: none;
+}
+
+.favorite {
+    background-color: red;
+    color: white;
+}

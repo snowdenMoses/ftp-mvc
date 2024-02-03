@@ -1,13 +1,21 @@
 class ProductsController < AdminController
-  before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :set_product, only: %i[ show edit update destroy product_full_detail ]
 
   # GET /products or /products.json
   def index
-    @products = Product.includes(:categories,user: :personal_detail).paginate(page: params[:page], per_page:15)
+    @products = Product.includes(:categories,user: :personal_detail).order(created_at: :desc).paginate(page: params[:page], per_page:15)
   end
 
   # GET /products/1 or /products/1.json
   def show
+  end
+
+  def product_full_detail
+    @product_details = {
+      product: @product,
+      user: @product.user.as_json(except: [:id])
+    }
+    render layout: "application"
   end
 
   # GET /products/new
@@ -21,7 +29,6 @@ class ProductsController < AdminController
 
   # POST /products or /products.json
   def create
-    binding.pry
     @product = Product.new(product_params.except(:categories))
     @product.user = current_user
     respond_to do |format|
@@ -67,7 +74,7 @@ class ProductsController < AdminController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
-      @product = Product.find_by_id(params[:id])
+      @product = Product.includes(:user).find_by_id(params[:id])
       raise ActiveRecord::RecordNotFound, 'No record found' if @product.nil?
     end
 

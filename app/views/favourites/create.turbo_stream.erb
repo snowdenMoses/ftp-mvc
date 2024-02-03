@@ -1,0 +1,7 @@
+<%= turbo_stream.replace "#{dom_id(@product)}" do %>
+  <%= render "shared/liked", product: @product %>
+<% end %>
+
+<%= turbo_stream.update 'favourite_counter' do %>
+  <%= @users_favourite_counter %>
+<% end %>

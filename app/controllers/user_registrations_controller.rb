@@ -12,7 +12,7 @@ class UserRegistrationsController < Devise::RegistrationsController
         sign_in(@user)
         format.html { redirect_to :home_root, notice: "Welcome! Your account has been created successfully." }
       else
-        @user.build_personal_detail
+        # @user.build_personal_detail
         format.html { render "devise/registrations/new", status: :unprocessable_entity }
       end
     end
