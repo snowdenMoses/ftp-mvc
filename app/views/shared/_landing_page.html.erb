@@ -1,0 +1,25 @@
+<div class="home_index">
+  <div class="grid grid-cols-4 gap-4 mb-2">
+    <div class="overflow-y-auto flex items-center justify-center rounded bg-gray-50 dark:bg-gray-800">
+      <div class="  w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="p-5 ">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Categories</h5>
+          <div class="">
+            <% Category.all.sample(9).each do |category| %>
+              <p class="mb-3 font-semibold text-gray-700 dark:text-gray-400 font-poppins">
+                <%= link_to customers_category_path(category) do %>
+                  <%= category.title %>
+                <% end %>
+              </p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="overflow-y-scroll flex items-center justify-center rounded bg-gray-50 dark:bg-gray-800 col-span-3">
+      <%= image_tag "ecommerce.jpg", class: "w-full h-full rounded" %>
+    </div>
+  </div>
+
+  <%= render "shared/all_products", products: Product.all.each %>
+</div>

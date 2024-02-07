@@ -1,4 +1,3 @@
-<div> Favourite page</div>
-<%= turbo_frame_tag "favourite_products" do %>
+<div id="favourite_products">
   <%= render "shared/all_products", products: @favourite_products %>
-<% end %>
+</div>

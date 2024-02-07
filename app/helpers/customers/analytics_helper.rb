@@ -1,0 +1,2 @@
+module Customers::AnalyticsHelper
+end

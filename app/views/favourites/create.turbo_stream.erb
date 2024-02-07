@@ -5,3 +5,7 @@
 <%= turbo_stream.update 'favourite_counter' do %>
   <%= @users_favourite_counter %>
 <% end %>
+
+<%= turbo_stream.update 'sidebar_favourite_count' do %>
+  <%= @users_favourite_counter %>
+<% end %>

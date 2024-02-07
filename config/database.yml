@@ -82,5 +82,6 @@ test:
 production:
   <<: *default
   database: ftp_mvc_production
-  username: ftp_mvc
-  password: <%= ENV["FTP_MVC_DATABASE_PASSWORD"] %>
+  username: <%=ENV.fetch('DATABASE_URL') %>
+  host: <%=ENV.fetch('PGPASSWORD') %>
+  password: <%=ENV.fetch('PGPASSWORD') %>

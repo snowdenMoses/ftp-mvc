@@ -1,0 +1,11 @@
+<div class="sm:ml-64 w-full">
+  <% if @favourite_products.any? %>
+    <div id="favourite_products">
+      <%= render "shared/all_products", products: @favourite_products %>
+    </div>
+  <% else %>
+    <div>
+      <h2>You don't have any favourite product yet</h2>
+    </div>
+  <% end %>
+</div>

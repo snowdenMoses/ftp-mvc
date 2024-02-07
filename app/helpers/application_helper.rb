@@ -22,4 +22,20 @@ module ApplicationHelper
   def thumbnail_image_tag(image_src)
     image_tag(image_src, class: "image_class")
   end
+
+  def initials_avatar(name, size = 50)
+    initials = name.split.map(&:first).join.upcase
+    # color = Digest::MD5.hexdigest(name).slice(0..5)
+    # color = bg-slate-600
+
+    # content_tag(:div, initials, class: 'initials-avatar', style: "background-color: ##{color}; width: #{size}px; height: #{size}px; line-height: #{size}px;")
+    content_tag(:div, initials, class: 'initials-avatar bg-slate-600', style: "width: #{size}px; height: #{size}px; line-height: #{size}px;")
+  end
+  def currency_formatter(amount)
+    number_to_currency(amount, unit: '₦', precision: 0, delimiter: ',')
+  end
+
+  def icon_tag(icon_name, width = 25)
+    image_tag(icon_name, width: width)
+  end
 end

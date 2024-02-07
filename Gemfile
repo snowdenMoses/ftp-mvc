@@ -92,3 +92,5 @@ gem "chartkick"
 gem "groupdate"
 
 gem "jquery-rails", "~> 4.6"
+
+gem "webpacker", "~> 5.4"

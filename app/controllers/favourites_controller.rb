@@ -1,7 +1,7 @@
 class FavouritesController < ApplicationController
 
   def index
-    favourites = Favourite.includes(:product, user: :personal_detail).where(user_id: current_user.id, status: 'active')
+    favourites = Favourite.includes({product: [:categories]}, user: :personal_detail).where(user_id: current_user.id, status: 'active')
     @favourite_products = favourites.map do |favourite|
       favourite.product
     end

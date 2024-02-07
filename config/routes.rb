@@ -16,11 +16,21 @@ Rails.application.routes.draw do
   resources :admin_analytics, only: %i[index]
   get 'personal_details/index'
   resources :products do
-    member do
-      get 'product_full_detail'
-    end
+    resources :comments, module: :products
   end
   resources :users, only: [:index, :show, :edit, :update]
   resources :user_registrations, only: [:new, :create]
   resources :favourites, only: [:index, :create, :destroy]
+  resources :dashboard, only: :index
+  resources :profile_information, only: :index
+  namespace :customers do
+    resources :categories
+    resources :products
+    resources :analytics, only: :index
+  end
+  namespace :vendors do
+    resources :products
+    resources :favourites
+    resources :analytics, only: :index
+  end
 end

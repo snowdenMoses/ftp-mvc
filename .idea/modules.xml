@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ftp_mvc.iml" filepath="$PROJECT_DIR$/.idea/ftp_mvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../railsplayground/.idea/railsplayground.iml" filepath="$PROJECT_DIR$/../railsplayground/.idea/railsplayground.iml" />
     </modules>
   </component>
 </project>

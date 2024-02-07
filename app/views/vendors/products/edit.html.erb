@@ -1,0 +1,8 @@
+<div class="p-4 sm:ml-64 w-full">
+  <h1 class="font-bold text-4xl">Editing product</h1>
+
+  <%= render partial: "form", locals:{ product: @product, url: vendors_product_path(@product) }%>
+
+  <%= link_to "Show this product", @product, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <%= link_to "Back to products", vendors_products_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+</div>

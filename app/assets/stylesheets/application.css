@@ -32,3 +32,24 @@
     background-color: red;
     color: white;
 }
+
+.initials-avatar {
+    border-radius: 50%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.hidden {
+    opacity: 0;
+    transition: opacity 2s ease; /* adjust the transition duration as needed */
+}
+
+.wrapper{
+    margin-top: 80px;
+}
+
+.home_index{
+    margin-top: 80px;
+}

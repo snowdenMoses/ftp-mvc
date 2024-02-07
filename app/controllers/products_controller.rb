@@ -10,13 +10,6 @@ class ProductsController < AdminController
   def show
   end
 
-  def product_full_detail
-    @product_details = {
-      product: @product,
-      user: @product.user.as_json(except: [:id])
-    }
-    render layout: "application"
-  end
 
   # GET /products/new
   def new

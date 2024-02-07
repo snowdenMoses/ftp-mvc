@@ -1,0 +1,7 @@
+<% if @category_products.any? %>
+  <%= render "shared/all_products", products: @category_products %>
+<% else %>
+  <div>
+    <h2> No product yet for this category</h2>
+  </div>
+<% end %>

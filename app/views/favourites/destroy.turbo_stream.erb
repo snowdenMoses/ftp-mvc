@@ -3,12 +3,15 @@
 <% end %>
 
 <%= turbo_stream.replace "favourite_products" do %>
-  <%#= render "shared/all_products", products: @favourite_products %>
   <%= turbo_frame_tag "favourite_products" do %>
     <%= render "shared/all_products", products: @favourite_products %>
   <% end %>
 <% end %>
 
 <%= turbo_stream.update 'favourite_counter' do %>
+  <%= @users_favourite_counter %>
+<% end %>
+
+<%= turbo_stream.update 'sidebar_favourite_count' do %>
   <%= @users_favourite_counter %>
 <% end %>
