@@ -21,14 +21,15 @@ ENV RAILS_LOG_TO_STDOUT="1" \
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
+#Precompile assets
+RUN bundle exec rake assets:precompile
+
 # Copy application code
 COPY . .
 
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile --gemfile app/ lib/
 
-#Precompile assets
-RUN #bundle exec rake assets:precompile
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
 RUN #SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile
