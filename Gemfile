@@ -96,3 +96,5 @@ gem "jquery-rails", "~> 4.6"
 gem "webpacker", "~> 5.4"
 
 gem "dotenv-rails", "~> 2.8"
+
+gem "aws-sdk-s3", "~> 1.143"
