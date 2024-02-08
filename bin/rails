@@ -3,4 +3,4 @@
 #require_relative "../config/boot"
 #require "rails/commands"
 
-secret_key_base = 2n17mJhCc9ra9PFcg7vCRQnkiei6
+secret_key_base = "2n17mJhCc9ra9PFcg7vCRQnkiei6"
