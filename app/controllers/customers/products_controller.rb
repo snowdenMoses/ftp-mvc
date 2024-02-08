@@ -21,6 +21,6 @@ class Customers::ProductsController < ApplicationController
 
   def set_product
     @product = Product.includes(:comments, user: [:personal_detail]).find_by_id(params[:id])
-    raise Record::NotFound, 'No record found' if @product.nil?
+    raise ActiveRecord::RecordNotFound, 'No record found' if @product.nil?
   end
 end
