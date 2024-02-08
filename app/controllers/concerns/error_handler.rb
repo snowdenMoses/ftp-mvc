@@ -4,7 +4,7 @@ module ErrorHandler
 
   included do
     rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-    rescue_from ActiveRecord::RecordNotFound, with: :no_record
+    rescue_from Record::NoRecordFound, with: :no_record
   end
 
   def user_not_authorized

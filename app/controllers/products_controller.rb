@@ -68,7 +68,7 @@ class ProductsController < AdminController
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.includes(:user).find_by_id(params[:id])
-      raise ActiveRecord::RecordNotFound, 'No record found' if @product.nil?
+      raise Record::NoRecordFound, 'No record found' if @product.nil?
     end
 
     # Only allow a list of trusted parameters through.

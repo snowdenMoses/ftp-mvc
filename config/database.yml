@@ -23,10 +23,10 @@ default: &default
 
 development:
   <<: *default
-  database: ftp_mvc_development
+  database: <%=ENV.fetch("POSTGRES_DB") %>
   username: <%=ENV.fetch("PGUSER") %>
-  host: <%=ENV.fetch('DATABASE_URL') %>
-  password: <%=ENV.fetch('PGPASSWORD') %>
+#  host: <%#=ENV.fetch('DATABASE_URL') %>
+  password: 1234
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
