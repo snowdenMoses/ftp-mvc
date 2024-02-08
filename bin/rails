@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
-#APP_PATH = File.expand_path("../config/application", __dir__)
-#require_relative "../config/boot"
-#require "rails/commands"
+APP_PATH = File.expand_path("../config/application", __dir__)
+require_relative "../config/boot"
+require "rails/commands"
 
 secret_key_base = "2n17mJhCc9ra9PFcg7vCRQnkiei6"
