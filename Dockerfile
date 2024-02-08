@@ -35,4 +35,5 @@ ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
+CMD ["bundle", "exec", "rake", "assets:precompile"]
 CMD ["./bin/rails", "server"]
