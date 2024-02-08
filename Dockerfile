@@ -28,7 +28,7 @@ COPY . .
 RUN bundle exec bootsnap precompile --gemfile app/ lib/
 
 #Precompile assets
-RUN bundle exec bootsnap rake assets:precompile
+RUN bundle exec rake assets:precompile
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
 RUN #SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile
