@@ -1,3 +1,3 @@
  module Record
-  class NoRecordFound < StandardError; end
+  class NotFound < StandardError; end
 end

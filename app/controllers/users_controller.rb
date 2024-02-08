@@ -23,7 +23,7 @@ class UsersController < AdminController
 
   def set_user
     @user = User.find_by_id(params[:id])
-    raise Record::NoRecordFound, 'record not found' if @user.nil?
+    raise Record::NotFound, 'record not found' if @user.nil?
   end
 end
 
