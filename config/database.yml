@@ -9,7 +9,7 @@ default: &default
 development:
   <<: *default
   database: <%=ENV.fetch('POSTGRES_DB') %>
-  host: <%=ENV.fetch('DB_URL') %>
+  host: <%=ENV.fetch('DB_HOST') %>
   username: <%=ENV.fetch("PGUSER") %>
   password: <%=ENV.fetch('PGPASSWORD') %>
   port: <%=ENV.fetch('PG_PORT') %>
@@ -22,6 +22,7 @@ test:
 production:
   <<: *default
   database: <%=ENV.fetch('POSTGRES_DB') %>
-  host: <%=ENV.fetch('DB_URL') %>
+  host: <%=ENV.fetch('DB_HOST') %>
   username: <%=ENV.fetch("PGUSER") %>
   password: <%=ENV.fetch('PGPASSWORD') %>
+  port: <%=ENV.fetch('PG_PORT') %>
