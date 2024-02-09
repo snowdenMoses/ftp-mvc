@@ -21,10 +21,9 @@ ENV RAILS_LOG_TO_STDOUT="1" \
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
+RUN  bundle exec rake assets:precompile
 # Copy application code
 COPY . .
-
-RUN  bundle exec rake assets:precompile
 
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile --gemfile app/ lib/
