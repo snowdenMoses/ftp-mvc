@@ -28,6 +28,8 @@ COPY . .
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile --gemfile app/ lib/
 
+
+RUN yarn install
 RUN  bundle exec rake assets:precompile
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
