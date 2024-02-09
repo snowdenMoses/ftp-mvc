@@ -21,6 +21,7 @@ ENV RAILS_LOG_TO_STDOUT="1" \
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
+Run yarn install
 RUN  bundle exec rake assets:precompile
 # Copy application code
 COPY . .
