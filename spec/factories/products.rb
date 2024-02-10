@@ -4,5 +4,6 @@ FactoryBot.define do
     price { Faker::Commerce.price }
     stock { rand(1..20) }
     description { Faker::Restaurant.description }
+    user
   end
 end

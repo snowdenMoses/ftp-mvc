@@ -33,12 +33,19 @@
 
   <div class="">
     <div class="form-group">
+      <%= form.label :categories, class: "mb-2 block"%>
       <%= form.collection_check_boxes(:categories, Category.all, :id, :title) do |b| %>
         <%= b.label class: "mr-3 inline-block align-center" do %>
           <%= b.check_box%> <%=b.text %>
         <% end %>
       <% end %>
-      </div>
+    </div>
+  </div>
+
+  <div class="form-group my-5">
+    <%= form.label :state_id, class: "mb-2 block"%>
+    <%= form.select :state_id, options_for_select(State.all.map{ |state| [state.name, state.id] }) %>
+  </div>
   </div>
 
   <div class="my-5">

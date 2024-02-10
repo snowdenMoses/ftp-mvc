@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :products
     resources :analytics, only: :index
+    resources :states, only: :show
   end
   namespace :vendors do
     resources :products

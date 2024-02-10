@@ -1,0 +1,7 @@
+<% if @state_products.any? %>
+  <%= render "shared/all_products", products: @state_products %>
+<% else %>
+  <div>
+    <h2> No product yet in this State</h2>
+  </div>
+<% end %>

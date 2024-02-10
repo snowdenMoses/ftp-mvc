@@ -7,9 +7,10 @@ class Product < ApplicationRecord
     image.variant :thumb, resize_to_limit: [50, 50]
   end
   belongs_to :user
+  has_many :states
 
   normalizes :name, with: -> name {name.downcase}
-  validates_presence_of :name, :description, :price, :stock
+  validates_presence_of :name, :description, :price, :stock, :state_id
   validates :price, presence: true
   validates :price, :numericality => { :greater_than => 0 }
   validates :stock, :numericality => { :greater_than => -1 }
