@@ -11,6 +11,12 @@ module.exports = {
     ],
     theme: {
         extend: {
+            width: {
+                'category': '200px',
+            },
+            height: {
+                'category': '200px',
+            },
             fontFamily: {
                 poppins: ["Poppins", "sans-serif"],
                 'body': [

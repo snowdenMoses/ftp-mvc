@@ -49,6 +49,19 @@ class CategoriesController < AdminController
         format.json { render json: @category.errors, status: :unprocessable_entity }
       end
     end
+
+    # respond_to do |format|
+    #   if @category.update(category_params.except(:categories))
+    #     category_params[:categories].reject(&:empty?).each do |category_id|
+    #       @category.category_categorys.create(category_id: category_id.to_i)
+    #     end
+    #     format.html { redirect_to category_url(@category), notice: "Product was successfully updated." }
+    #     format.json { render :show, status: :ok, location: @category }
+    #   else
+    #     format.html { render :edit, status: :unprocessable_entity }
+    #     format.json { render json: @category.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /categories/1 or /categories/1.json
@@ -69,6 +82,6 @@ class CategoriesController < AdminController
 
     # Only allow a list of trusted parameters through.
     def category_params
-      params.require(:category).permit(:title)
+      params.require(:category).permit(:title, :image)
     end
 end

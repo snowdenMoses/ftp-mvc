@@ -20,19 +20,6 @@
     object-fit: cover;
 }
 
-.favorite-button {
-    background-color: #ddd;
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: #000;
-    text-decoration: none;
-}
-
-.favorite {
-    background-color: red;
-    color: white;
-}
-
 .initials-avatar {
     border-radius: 50%;
     text-align: center;
@@ -52,4 +39,8 @@
 
 .home_index{
     margin-top: 80px;
+}
+
+#show_all{
+    background-color: #730E15;
 }

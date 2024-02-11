@@ -4,6 +4,13 @@
     <%= category.title %>
   </p>
 
+  <% if category.image.present? %>
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Image:</strong>
+      <%= image_tag category.image, class: "w-40 h-40 mb-1 rounded" %>
+    </p>
+  <% end %>
+
   <% if action_name != "show" %>
     <%= link_to "Show this category", category, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to "Edit this category", edit_category_path(category), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>

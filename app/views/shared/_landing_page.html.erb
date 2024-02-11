@@ -1,41 +1,29 @@
 <div class="home_index">
-  <div class="grid grid-cols-6 gap-4 mt-8 mb-2">
-    <div class="overflow-y-auto flex items-center justify-center rounded dark:bg-gray-800">
-      <div class="  w-full h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <div class="p-5 ">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Categories</h5>
-          <div class="">
-            <% Category.all.sample(9).each do |category| %>
-              <p class="mb-3 font-semibold text-gray-700 dark:text-gray-400 font-poppins">
-                <%= link_to customers_category_path(category) do %>
-                  <%= category.title %>
-                <% end %>
-              </p>
-            <% end %>
-          </div>
+  <div data-controller="categories"
+       data-categories-limitedCategories-valeu="<%= Category.all.sample(5) %>"
+       data-categories-allCategories-valeu="<%= Category.all %>">
+
+    <div class="mb-8 border-b-2 border-gray-900">
+      <div class="flex justify-between">
+        <h2 class="mb-2 font-bold italic text-2xl underline-offset-8"> Categories </h2>
+
+        <div class="inline" id="show-more">
+          <%= link_to 'Show More', '#', data: { action: "click->categories#toggle", showing_more: "false" } %>
         </div>
       </div>
-    </div>
-    <div class="flex items-center justify-center rounded bg-gray-50 dark:bg-gray-800 col-span-4">
-      <%= image_tag "ecommerce.jpg", class: "w-full h-full rounded" %>
-    </div>
-    <div class="flex items-center justify-center rounded dark:bg-gray-800">
-      <div class="overflow-hidden py-2 w-full h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <div class="h-screen ">
-          <h5 class=" p-5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">States</h5>
-          <div class="overflow-y-auto h-full p-5">
-            <% State.all.each do |state| %>
-              <p class="mb-3 font-semibold text-gray-700 dark:text-gray-400 font-poppins">
-                <%= link_to customers_state_path(state) do %>
-                  <%= state.name %>
-                <% end %>
-              </p>
-            <% end %>
-          </div>
-        </div>
+      <div class="grid grid-cols-6 gap-4 mt-8 mb-2" id="show_limited">
+        <%= render partial: 'shared/homepage_category_display', locals: { query: Category.all.order(created_at: :desc).limit(6) } %>
       </div>
+
+      <div class="grid grid-cols-6 gap-4 mt-8 mb-2 hidden" id="show_all">
+        <%= render partial: 'shared/homepage_category_display', locals: { query: Category.all.order(created_at: :desc) } %>
+      </div>
+
     </div>
   </div>
 
-  <%= render "shared/all_products", products: Product.all.each %>
+  <div class="mt-3">
+    <h2 class="my-3 font-bold italic text-2xl underline-offset-8"> Products </h2>
+    <%= render "shared/all_products", products: Product.all.each %>
+  </div>
 </div>
