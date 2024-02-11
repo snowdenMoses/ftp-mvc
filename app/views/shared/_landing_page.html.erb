@@ -3,7 +3,7 @@
        data-categories-limitedCategories-valeu="<%= Category.all.sample(5) %>"
        data-categories-allCategories-valeu="<%= Category.all %>">
 
-    <div class="mb-8 border-b-2 border-gray-900">
+    <div class="mb-8">
       <div class="flex justify-between">
         <h2 class="mb-2 font-bold italic text-2xl underline-offset-8"> Categories </h2>
 
@@ -15,7 +15,7 @@
         <%= render partial: 'shared/homepage_category_display', locals: { query: Category.all.order(created_at: :desc).limit(6) } %>
       </div>
 
-      <div class="grid grid-cols-6 gap-4 mt-8 mb-2 hidden" id="show_all">
+      <div class="grid grid-cols-6 gap-4 mt-8 pb-2 hidden" id="show_all">
         <%= render partial: 'shared/homepage_category_display', locals: { query: Category.all.order(created_at: :desc) } %>
       </div>
 
