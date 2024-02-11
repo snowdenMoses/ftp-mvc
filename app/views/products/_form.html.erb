@@ -46,7 +46,6 @@
     <%= form.label :state_id, class: "mb-2 block"%>
     <%= form.select :state_id, options_for_select(State.all.map{ |state| [state.name, state.id] }) %>
   </div>
-  </div>
 
   <div class="my-5">
     <div class="mb-3">
