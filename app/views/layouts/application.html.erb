@@ -17,7 +17,7 @@
 </head>
 
 <body>
-<main class="max-w-screen-xl container mx-auto px-5">
+<main class="container mx-auto px-5">
   <% if notice.present? %>
     <%= render partial: "shared/notice_toast_message", locals: { message: notice, message_type: "success" } %>
   <% elsif alert.present? %>
