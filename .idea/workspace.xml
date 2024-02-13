@@ -8,7 +8,8 @@
       <change beforePath="$PROJECT_DIR$/../abubakar.bio/.idea/abubakar.bio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../abubakar.bio/.idea/abubakar.bio.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/shared/_landing_page.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_landing_page.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shared/_all_products.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_all_products.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shared/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_header.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/.sprockets-manifest-174ccde3e8d8d6b127b0a025e70d5720.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/.sprockets-manifest-174ccde3e8d8d6b127b0a025e70d5720.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,7 +134,7 @@
       <workItem from="1706947533616" duration="127719000" />
       <workItem from="1707398221693" duration="1902000" />
       <workItem from="1707665866939" duration="19718000" />
-      <workItem from="1707784549774" duration="1841000" />
+      <workItem from="1707784549774" duration="4670000" />
     </task>
     <servers />
   </component>
