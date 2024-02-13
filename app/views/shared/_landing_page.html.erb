@@ -1,4 +1,4 @@
-<div class="home_index mt-4">
+<div class="home_index mt-4 category">
   <div data-controller="categories"
        data-categories-limitedCategories-valeu="<%= Category.all.sample(5) %>"
        data-categories-allCategories-valeu="<%= Category.all %>">
@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-8 mb-2" id="show_limited">
-        <%= render partial: 'shared/homepage_category_display', locals: { query: Category.all.order(created_at: :desc).limit(6) } %>
+        <%= render partial: 'shared/homepage_category_display', locals: { query: Category.all.order(created_at: :desc).limit(4) } %>
       </div>
 
       <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-8 pb-2 hidden" id="show_all">
