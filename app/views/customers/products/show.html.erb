@@ -1,88 +1,100 @@
 <% product = @product_details[:product] %>
 <% vendor = @product_details[:user] %>
 
-<div class="grid grid-cols-6 gap-4 flex flex-col">
-  <div class="col-span-4 gap-4 bg-white border-gray-200 shadow h-auto flex rounded-lg">
-    <% if product.images.any? %>
-      <% product.images.each do |image| %>
-        <div class="flex flex-col bg-white border border-gray-200 rounded-lg shadow">
-          <%= image_tag(image, class: "w-40 px-2 py-2 rounded h-40 object-cover") %>
 
+<div class="mx-auto flex flex-col justify-center items-center ">
+  <div class="border-l-2 border-r-2 border-gray-100 px-10 shadow-xl">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 flex flex-col product-details-container">
+      <div class=" bg-white border-gray-200 shadow h-auto flex rounded-lg">
+        <% if product.images.any? %>
+          <% product.images.each do |image| %>
+            <div class="flex flex-col bg-white border border-gray-200 rounded-tl-lg rounded-br-lg shadow">
+              <%= image_tag(image, class: "product-details-image px-2 py-2 object-cover") %>
+            </div>
+          <% end %>
+        <% else %>
+          <%= image_tag("https://via.placeholder.com/200") %>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="flex flex-col justify-between p-4 leading-normal">
+      <h5 class="mb-2 capitalize text-lg font-bold tracking-tight text-gray-900 dark:text-white"><%= product.name %></h5>
+      <p class="mb-3 font-semibold text-sm text-gray-700 dark:text-gray-400"><%= currency_formatter(product.price) %></p>
+    </div>
+    <div class="flex flex-col justify-between p-4 leading-normal">
+      <h5 class="mb-2 capitalize text-lg font-bold tracking-tight text-gray-900 dark:text-white">Description</h5>
+      <p class="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400"><%= product&.description %></p>
+    </div>
+
+
+    <!--About vendor-->
+    <div class="w-full h-auto">
+      <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <div class="flex items-center justify-between mb-4">
+          <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Contact Product's Vendor</h5>
+        </div>
+        <div class="flow-root">
+          <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+            <li class="py-3 sm:py-4">
+              <div class="flex items-center">
+                <div class="flex-shrink-0 mr-2">
+                  <%= initials_avatar(vendor&.personal_detail&.full_name) if vendor&.personal_detail.present? %>
+                </div>
+                <div class="flex-1 min-w-0 ms-4">
+                  <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                    <%= vendor&.personal_detail&.full_name %>
+                  </p>
+                  <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                    <%= vendor&.email %>
+                  </p>
+                  <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                    <%= vendor&.personal_detail&.phone_number %>
+                  </p>
+                </div>
+                <!--              <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">-->
+                <!--                $320-->
+                <!--              </div>-->
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <!--Comment box-->
+    <div class="md:w-1/2">
+      <%= render "shared/commentable_form", commentable: product %>
+    </div>
+    <div class="mt-10">
+      <% product&.comments&.order(created_at: :desc).each do |comment| %>
+        <div class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:w-1/2 bg-white dark:bg-gray-800">
+          <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 md:rounded-es-lg md:border-b-0 md:border-e dark:bg-gray-800 dark:border-gray-700">
+            <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                <%= comment.content %>
+              </h3>
+            </blockquote>
+            <figcaption class="flex items-center justify-center ">
+              <%= initials_avatar(comment&.user&.personal_detail&.full_name) %>
+              <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+                <div>
+                  <%= comment&.user&.personal_detail&.full_name %>
+                </div>
+                <div class="text-sm text-gray-500 dark:text-gray-400">
+                  <i>
+                    <%= time_ago_in_words(comment.created_at) %> ago
+                  </i>
+                </div>
+              </div>
+            </figcaption>
+          </figure>
         </div>
       <% end %>
-    <% else %>
-      <%= image_tag("https://via.placeholder.com/200") %>
-    <% end %>
-  </div>
-  <div class="col-span-2 bg-red-50 h-auto">
-    <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-      <div class="flex items-center justify-between mb-4">
-        <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Contact Product's Vendor</h5>
-      </div>
-      <div class="flow-root">
-        <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-          <li class="py-3 sm:py-4">
-            <div class="flex items-center">
-              <div class="flex-shrink-0 mr-2">
-                <%= initials_avatar(vendor&.personal_detail&.full_name) if vendor&.personal_detail.present? %>
-              </div>
-              <div class="flex-1 min-w-0 ms-4">
-                <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                  <%= vendor&.personal_detail&.full_name %>
-                </p>
-                <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                  <%= vendor&.email %>
-                </p>
-                <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                  <%= vendor&.personal_detail&.phone_number %>
-                </p>
-              </div>
-              <!--              <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">-->
-              <!--                $320-->
-              <!--              </div>-->
-            </div>
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
-</div>
-<div class="flex flex-col justify-between p-4 leading-normal">
-  <h5 class="mb-2 capitalize text-lg font-bold tracking-tight text-gray-900 dark:text-white"><%= product.name %></h5>
-  <p class="mb-3 font-semibold text-sm text-gray-700 dark:text-gray-400"><%= currency_formatter(product.price) %></p>
-</div>
-<div class="flex flex-col justify-between p-4 leading-normal">
-  <h5 class="mb-2 capitalize text-lg font-bold tracking-tight text-gray-900 dark:text-white">Description</h5>
-  <p class="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400"><%= product&.description %></p>
-</div>
-<div class="md:w-1/2">
-  <%= render "shared/commentable_form", commentable: product %>
-</div>
-<div class="mt-10">
-  <% product&.comments&.order(created_at: :desc).each do |comment| %>
-    <div class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:w-1/2 bg-white dark:bg-gray-800">
-      <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 md:rounded-es-lg md:border-b-0 md:border-e dark:bg-gray-800 dark:border-gray-700">
-        <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-            <%= comment.content %>
-          </h3>
-        </blockquote>
-        <figcaption class="flex items-center justify-center ">
-          <%= initials_avatar(comment&.user&.personal_detail&.full_name) %>
-          <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
-            <div>
-              <%= comment&.user&.personal_detail&.full_name %>
-            </div>
-            <div class="text-sm text-gray-500 dark:text-gray-400">
-              <i>
-                <%= time_ago_in_words(comment.created_at) %> ago
-              </i>
-            </div>
-          </div>
-        </figcaption>
-      </figure>
-    </div>
-  <% end %>
 </div>
 
 

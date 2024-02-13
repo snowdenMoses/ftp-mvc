@@ -1,0 +1,9 @@
+<% if @categories.any? %>
+  <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-8 mb-2" id="show_limited">
+    <%= render partial: 'shared/homepage_category_display', locals: { query: @categories } %>
+  </div>
+<% else %>
+  <div>
+    <h2> No category yet</h2>
+  </div>
+<% end %>

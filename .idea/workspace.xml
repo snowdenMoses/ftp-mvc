@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d28fa48f-b1ab-431d-bc56-737a26d7ba27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/assets/images/close.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/shared/_menu_card.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/customers/categories/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../abubakar.bio/.idea/abubakar.bio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../abubakar.bio/.idea/abubakar.bio.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/shared/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_header.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/shared/_landing_page.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_landing_page.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/customers/categories_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/customers/categories_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/customers/products/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/customers/products/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shared/_commentable_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_commentable_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shared/_menu_card.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_menu_card.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,33 +36,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/snowdenmoses/Documents/Personal/ftp_mvc/app/assets/images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/snowdenmoses/Documents/Personal/ftp_mvc/app/views/shared",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ruby.structure.view.model.defaults.configured": "true",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/views/shared" />
       <recent name="$PROJECT_DIR$/../abubakar.bio/images" />
       <recent name="$PROJECT_DIR$/app/assets/images" />
       <recent name="$PROJECT_DIR$/bin" />
       <recent name="$PROJECT_DIR$/app/views/vendors/analytics" />
-      <recent name="$PROJECT_DIR$/app/views/shared" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/views" />
@@ -137,7 +137,7 @@
       <workItem from="1707398221693" duration="1902000" />
       <workItem from="1707665866939" duration="19718000" />
       <workItem from="1707784549774" duration="6739000" />
-      <workItem from="1707845709878" duration="3534000" />
+      <workItem from="1707845709878" duration="7965000" />
     </task>
     <servers />
   </component>
