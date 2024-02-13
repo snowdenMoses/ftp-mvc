@@ -1,13 +1,13 @@
-<div class="home_index">
+<div class="home_index mt-4">
   <div data-controller="categories"
        data-categories-limitedCategories-valeu="<%= Category.all.sample(5) %>"
        data-categories-allCategories-valeu="<%= Category.all %>">
 
     <div class="mb-8">
       <div class="flex justify-between">
-        <h2 class="mb-2 font-bold italic text-2xl underline-offset-8"> Categories </h2>
+        <h2 class="mb-2 mt-8 font-bold italic text-2xl underline-offset-8"> Categories </h2>
 
-        <div class="inline border border-slate-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" id="show-more">
+        <div class="mt-8 inline border border-slate-600 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" id="show-more">
           <%= link_to 'Show More', '#', data: { action: "click->categories#toggle", showing_more: "false" } %>
         </div>
       </div>
