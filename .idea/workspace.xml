@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d28fa48f-b1ab-431d-bc56-737a26d7ba27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/customers/categories/index.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../abubakar.bio/.idea/abubakar.bio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../abubakar.bio/.idea/abubakar.bio.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/customers/categories_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/customers/categories_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/customers/products/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/customers/products/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/shared/_commentable_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_commentable_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/controllers/general_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/controllers/general_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/customer.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/customer.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/vendor.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/vendor.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/shared/_menu_card.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_menu_card.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shared/_sidebar.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_sidebar.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +138,7 @@
       <workItem from="1707398221693" duration="1902000" />
       <workItem from="1707665866939" duration="19718000" />
       <workItem from="1707784549774" duration="6739000" />
-      <workItem from="1707845709878" duration="7965000" />
+      <workItem from="1707845709878" duration="12889000" />
     </task>
     <servers />
   </component>

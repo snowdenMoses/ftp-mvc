@@ -44,4 +44,4 @@ export default class extends Controller {
     sidePanelClosedMenuBar.classList.toggle("hidden")
 
   }
-}
+};
