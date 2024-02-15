@@ -3,25 +3,30 @@ class ProductsController < AdminController
 
   # GET /products or /products.json
   def index
+    authorize Product
     @products = Product.includes(:categories,user: :personal_detail).order(created_at: :desc).paginate(page: params[:page], per_page:15)
   end
 
   # GET /products/1 or /products/1.json
   def show
+    authorize Product
   end
 
 
   # GET /products/new
   def new
+    authorize Product
     @product = Product.new
   end
 
   # GET /products/1/edit
   def edit
+    authorize Product
   end
 
   # POST /products or /products.json
   def create
+    authorize Product
     @product = Product.new(product_params.except(:categories))
     @product.user = current_user
     respond_to do |format|
@@ -40,6 +45,7 @@ class ProductsController < AdminController
 
   # PATCH/PUT /products/1 or /products/1.json
   def update
+    authorize Product
     respond_to do |format|
       if @product.update(product_params.except(:categories))
         product_params[:categories].reject(&:empty?).each do |category_id|
@@ -56,6 +62,7 @@ class ProductsController < AdminController
 
   # DELETE /products/1 or /products/1.json
   def destroy
+    authorize Product
     @product.destroy!
 
     respond_to do |format|

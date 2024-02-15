@@ -1,5 +1,5 @@
 class Customers::AnalyticsController < ApplicationController
-  layout 'vendor'
+  layout 'customer'
   def index
     sql = "SELECT pd.name, count(f.product_id) as product_count FROM products pd
                                  JOIN favourites f on pd.id = f.product_id

@@ -1,7 +1,7 @@
 class UsersController < AdminController
   before_action :set_user, only: [:show, :update, :edit]
   def index
-    @users = User.includes(:personal_detail).order(created_at: :desc).paginate(page: params[:page], per_page: 15)
+    @users = User.all.order(created_at: :desc).paginate(page: params[:page], per_page: 15)
   end
 
   def show

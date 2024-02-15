@@ -1,13 +1,7 @@
 <div class="nav_header">
   <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b h-20 border-gray-200 dark:border-gray-600">
     <div class=" flex flex-wrap items-center justify-between mx-auto p-4 px-5">
-      <%= link_to :home_root do %>
-        <div class="flex logo">
-          <%= icon_tag "logo.svg" %>
-          <span class="logo-text self-center text-lg font-semibold whitespace-nowrap dark:text-white ml-2">Find That Plug</span>
-        </div>
-      <% end %>
-
+      <%=render "shared/logo" %>
       <div class="items-center product-search-box justify-between sm:flex w-1/2 md:flex md:w-auto md:order-1" id="navbar-sticky">
         <%= form_with url: customers_products_path, method: :get do |form| %>
           <%= form.label :product, class: "mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white" %>
