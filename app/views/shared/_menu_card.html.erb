@@ -1,57 +1,81 @@
 <div id="menu-card" class="w-full menu-card hidden flex flex-col px-2 justify-center border rounded-lg shadow-2xl dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 transition-transform -translate-x-full md:translate-x-0">
   <div class="w-full flex flex-col items-start">
-  <% if current_user.present? %>
-    <%= link_to dashboard_index_path do %>
-      <div class="flex justify-center items-center mb-2 w-full mr-2 border border-2-white text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-action="click->general#menuItemsClose">
+    <% if current_user.present? %>
+      <%= link_to dashboard_index_path do %>
+        <div class="flex justify-center items-center mb-2 w-full mr-2 border border-2-white text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-action="click->general#menuItemsClose">
         <span class="mr-2">
           <%= current_user.personal_detail&.gender == "male" ? (image_tag "male.svg", width: 35) : (image_tag "female.svg", width: 35) %>
         </span>
-        <button type="button" id="">
-          My Account
-        </button>
-      </div>
-    <% end %>
+          <button type="button" id="">
+            My Account
+          </button>
+        </div>
+      <% end %>
 
-    <%= link_to favourites_path do %>
-      <div class="mb-2 flex items-center justify-center w-full mr-2 border border-2-white text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-action="click->general#menuItemsClose">
+      <%= link_to favourites_path do %>
+        <div class="mb-2 flex items-center justify-center w-full mr-2 border border-2-white text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-action="click->general#menuItemsClose">
             <span class="mr-1">
               <%= image_tag "like.svg", width: 25 %>
             </span>
-        <button type="button" id="" class="mr-1">
-          Favourites
-        </button>
-        <span class="mr-2">
-              <p type="button" class="text-black border bg-white px-2 rounded-full font-medium text-sm text-center" id="favourite_counter"><%= Favourite.where(user_id: current_user.id).count %></p>
+          <button type="button" id="" class="mr-1">
+            Favourites
+          </button>
+          <span class="mr-2">
+              <p type="button" class="text-black border bg-white px-2 rounded-full font-medium text-sm text-center" id="favourite_counter"><%= current_user.favourites_count %></p>
             </span>
-      </div>
-    <% end %>
+        </div>
+      <% end %>
 
-    <%= link_to customers_categories_path do %>
-      <div class="mb-2 flex items-center justify-center w-full mr-2 border border-2-white text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-action="click->general#menuItemsClose">
-        <button type="button" id="" class="mr-1">
-          Categories
-        </button>
-        <span class="mr-2">
+      <%= link_to customers_categories_path do %>
+        <div class="mb-2 flex items-center justify-center w-full mr-2 border border-2-white text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-action="click->general#menuItemsClose">
+          <button type="button" id="" class="mr-1">
+            Categories
+          </button>
+          <span class="mr-2">
               <p type="button" class="text-black border bg-white px-2 rounded-full font-medium text-sm text-center" id="favourite_counter"><%= Category.count %></p>
             </span>
+        </div>
+      <% end %>
+
+      <div data-controller="general">
+        <div data-action="click->general#showStatemodal" class="cursor-pointer mb-2 flex items-center justify-center w-full mr-2 border border-2-white text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-action="click->general#menuItemsClose">
+          <button type="button" id="" class="mr-1">
+            Products Locations
+          </button>
+        </div>
+      </div>
+
+      <%= link_to :destroy_user_session, data: { turbo_method: :delete } do %>
+        <button type="button" id="" class="mb-2 w-full mr-2 border border-2-white text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-action="click->general#menuItemsClose">
+          Sign Out
+        </button>
+      <% end %>
+
+
+    <% else %>
+      <%= link_to :new_user_session do %>
+        <button type="button" id="" class="mb-2 w-full mr-2 border border-2-white text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-action="click->general#menuItemsClose">
+          Log in
+        </button>
+      <% end %>
+
+      <%= link_to customers_categories_path do %>
+        <div class="mb-2 flex items-center justify-center w-full mr-2 border border-2-white text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-action="click->general#menuItemsClose">
+          <button type="button" id="" class="mr-1">
+            Categories
+          </button>
+          <span class="mr-2">
+              <p type="button" class="text-black border bg-white px-2 rounded-full font-medium text-sm text-center" id="favourite_counter"><%= Category.count %></p>
+            </span>
+        </div>
+      <% end %>
+      <div data-controller="general">
+        <div data-action="click->general#showStatemodal" class="cursor-pointer mb-2 flex items-center justify-center w-full mr-2 border border-2-white text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-action="click->general#menuItemsClose">
+          <button type="button" id="" class="mr-1">
+            Products Locations
+          </button>
+        </div>
       </div>
     <% end %>
-
-    <%= link_to :destroy_user_session, data: { turbo_method: :delete } do %>
-      <button type="button" id="" class="mb-2 w-full mr-2 border border-2-white text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-action="click->general#menuItemsClose">
-        Sign Out
-      </button>
-    <% end %>
-  <% else %>
-    <%= link_to :new_user_session do %>
-      <button type="button" id="" class="mb-2 w-full mr-2 border border-2-white text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-action="click->general#menuItemsClose">
-        Log in
-      </button>
-
-      <!--        <button type="button" id="" class="w-full mr-2 border border-2-white text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-action="click->general#menuItemsClose">-->
-      <!--          Sign Out-->
-      <!--        </button>-->
-    <% end %>
-  <% end %>
-</div>
+  </div>
 </div>

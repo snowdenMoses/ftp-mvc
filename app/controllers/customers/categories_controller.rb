@@ -1,6 +1,7 @@
 class Customers::CategoriesController < ApplicationController
+  skip_before_action :authenticate_user!
   def show
-    category = Category.includes(:product).find(params[:id])
+    category = Category.includes(:products).find(params[:id])
     @category_products = category.products
   end
 

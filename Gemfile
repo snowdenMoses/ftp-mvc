@@ -100,3 +100,5 @@ gem "dotenv-rails", "~> 2.8"
 gem "aws-sdk-s3", "~> 1.143"
 
 gem "bullet", "~> 7.1"
+
+gem "rack-mini-profiler", "~> 3.3"

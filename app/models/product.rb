@@ -6,8 +6,8 @@ class Product < ApplicationRecord
   has_many_attached :images do |image|
     image.variant :thumb, resize_to_limit: [50, 50]
   end
-  belongs_to :user
-  has_many :states
+  belongs_to :user, counter_cache: true
+  belongs_to :state, counter_cache: true
 
   normalizes :name, with: -> name {name.downcase}
   validates_presence_of :name, :description, :price, :stock, :state_id

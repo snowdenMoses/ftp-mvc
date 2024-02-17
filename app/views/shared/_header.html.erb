@@ -19,7 +19,11 @@
 
       <div data-controller="general" class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
         <% if current_user.present? %>
-          <div class="flex">
+          <div class="flex justify-center items-end text-end">
+            <span class="font-poppins text-sm nav-state mr-2 cursor-pointer border-2 border-slate-600 bg-slate-600 text-white rounded-full p-2" data-action="click->general#showStatemodal">
+              Products Locations
+            </span>
+
             <span class="mr-2 nav-account-icon">
               <%= link_to dashboard_index_path do %>
                 <%= current_user.personal_detail&.gender == "male" ? (image_tag "male.svg", width: 35) : (image_tag "female.svg", width: 35) %>
@@ -38,7 +42,7 @@
             <span class="mr-2 nav-favourite">
                 <%= link_to favourites_path do %>
                   <%= image_tag "like.svg", width: 25 %>
-                <p type="button" class="text-black font-medium text-sm text-center" id="favourite_counter"><%= Favourite.where(user_id: current_user.id).count %></p>
+                <p type="button" class="text-black font-medium text-sm text-center" id="favourite_counter"><%= current_user.favourites_count %></p>
                 <% end %>
             </span>
           </div>

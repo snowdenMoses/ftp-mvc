@@ -1,7 +1,5 @@
 <div class="home_index mt-4 category">
-  <div data-controller="categories"
-       data-categories-limitedCategories-valeu="<%= Category.all.sample(5) %>"
-       data-categories-allCategories-valeu="<%= Category.all %>">
+  <div data-controller="categories">
 
     <div class="mb-8">
       <div class="flex justify-between">
@@ -27,3 +25,4 @@
     <%= render "shared/all_products", products: products  %>
   </div>
 </div>
+<%= render "shared/states_modal" %>

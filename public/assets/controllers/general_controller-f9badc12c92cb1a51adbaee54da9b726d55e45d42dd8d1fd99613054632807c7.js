@@ -58,4 +58,4 @@ export default class extends Controller {
     stateModal.classList.add("hidden")
     stateModalOverlay.classList.add ("overlay-hide")
   }
-}
+};

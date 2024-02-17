@@ -1,6 +1,6 @@
 <%= form_with model: [commentable, Comment.new] do |form| %>
   <div class="mt-3">
-    <%= form.label :content, class: label_class %><br/>
+    <%= form.label "Voice out your comments", class: label_class %><br/>
     <%= form.text_area :content, placeholder: "make your comment", class: text_field_class %>
   </div>
 

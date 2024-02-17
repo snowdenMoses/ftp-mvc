@@ -1,5 +1,6 @@
 class Customers::ProductsController < ApplicationController
   before_action :set_product, only: [:show]
+  skip_before_action :authenticate_user!
 
   def show
     @product_details = {
