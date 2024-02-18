@@ -9,6 +9,10 @@ class ProductPolicy < ApplicationPolicy
   end
 
 
+  def index?
+    is_authorized_role?(@authorized_roles, @user)
+  end
+
   def create?
     is_authorized_role?(@authorized_roles, @user)
   end
