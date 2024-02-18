@@ -9,11 +9,11 @@ module ApplicationHelper
 
   def submit_class
     "w-full text-white bg-slate-600 hover:bg-black focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-3 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-    end
+  end
 
   def check_box_class
     "w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-    end
+  end
 
   def dashboard_sidebar_li_class
     "flex items-center p-2 text-white hover:text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
@@ -31,11 +31,16 @@ module ApplicationHelper
     # content_tag(:div, initials, class: 'initials-avatar', style: "background-color: ##{color}; width: #{size}px; height: #{size}px; line-height: #{size}px;")
     content_tag(:div, initials, class: 'initials-avatar bg-slate-600', style: "width: #{size}px; height: #{size}px; line-height: #{size}px;")
   end
+
   def currency_formatter(amount)
     number_to_currency(amount, unit: '₦', precision: 0, delimiter: ',')
   end
 
   def icon_tag(icon_name, width = 25)
     image_tag(icon_name, width: width)
+  end
+
+  def button_styles
+    "font-poppins mr-2 text-white bg-slate-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
   end
 end

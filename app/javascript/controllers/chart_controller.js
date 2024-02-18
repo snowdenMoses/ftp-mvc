@@ -7,6 +7,7 @@ export default class extends Controller {
   static values = {favourites: Array}
   initialize() {
     console.log(this.favouritesValue)
+    console.log("Hello from vendor analytics")
     const ctx = document.getElementById('myChart')
     new Chart(ctx, {
       type: "bar",

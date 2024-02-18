@@ -85,7 +85,6 @@
 }
 
 .state-modal{
-
     height: 400px;
     width: 50%;
 }
@@ -118,8 +117,13 @@
         align-items: center;
     }
 
-    .category, .nav-favourite, .nav-account-icon, .nav-state, .side-panel, .log-in-button{
+    .category, .nav-favourite, .nav-account-icon, .admin-side-panel, .nav-state, .side-panel, .log-in-button{
         display: none;
+    }
+
+    .state-modal{
+        margin-top: 100px;
+        width: 100%;
     }
 
 
@@ -133,6 +137,10 @@
     .side-bar-toggle{
         display: none;
     }
+}
+.canvas{
+    height: 600px;
+    background-color: red;
 }
 
 

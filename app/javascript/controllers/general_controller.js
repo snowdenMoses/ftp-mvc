@@ -34,20 +34,22 @@ export default class extends Controller {
   toggleSidePanel(event){
     event.preventDefault()
     const sidePanel = document.getElementById('side-panel')
+    const adminSidePanel = document.getElementById('admin-side-panel')
     const sidePanelClosedMenuBar = document.getElementById('side-panel-closed-menu-toggle')
     const sidePanelOpenMenuBar = document.getElementById('side-panel-open-menu-toggle')
     sidePanel.classList.toggle("side-panel")
+    adminSidePanel.classList.toggle("side-panel")
     sidePanelOpenMenuBar.classList.toggle("hidden")
     sidePanelClosedMenuBar.classList.toggle("hidden")
-
   }
 
   showStatemodal(event){
     event.preventDefault()
     const stateModal = document.getElementById('state-modal')
     const stateModalOverlay = document.getElementById('state-modal-overlay')
-    stateModal.classList.remove("hidden")
-    stateModalOverlay.classList.remove("overlay-hide")
+    stateModal.classList.toggle("hidden")
+    stateModalOverlay.classList.toggle("overlay-hide")
+    console.log("Modal opened")
 
   }
 
@@ -57,5 +59,16 @@ export default class extends Controller {
     const stateModal = document.getElementById('state-modal')
     stateModal.classList.add("hidden")
     stateModalOverlay.classList.add ("overlay-hide")
+  }
+
+  toggleAdminSidePanel(event){
+    event.preventDefault()
+    const adminSidePanel = document.getElementById('admin-side-panel')
+    const adminSidePanelClosedMenuBar = document.getElementById('admin-side-panel-closed-menu-toggle')
+    const adminSidePanelOpenMenuBar = document.getElementById('admin-side-panel-open-menu-toggle')
+    adminSidePanel.classList.toggle("admin-side-panel")
+    adminSidePanelOpenMenuBar.classList.toggle("hidden")
+    adminSidePanelClosedMenuBar.classList.toggle("hidden")
+    // console.log("testing")
   }
 }

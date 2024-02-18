@@ -1,7 +1,7 @@
 <div class="nav_header">
   <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b h-20 border-gray-200 dark:border-gray-600">
     <div class=" flex flex-wrap items-center justify-between mx-auto p-4 px-5">
-      <%=render "shared/logo" %>
+      <%= render "shared/logo" %>
       <div class="items-center product-search-box justify-between sm:flex w-1/2 md:flex md:w-auto md:order-1" id="navbar-sticky">
         <%= form_with url: customers_products_path, method: :get do |form| %>
           <%= form.label :product, class: "mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white" %>
@@ -12,7 +12,7 @@
               </svg>
             </div>
             <%= form.text_field :product, class: "block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "Product" %>
-            <%= form.submit "Search", class: "text-white absolute end-2.5 bottom-2.5 bg-slate-600 hover:bg-slate-900 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" %>
+            <%= form.submit "Search", class: "text-white absolute end-2.5 bottom-2.5 bg-slate-600 hover:bg-slate-900 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 " %>
           </div>
         <% end %>
       </div>
@@ -48,36 +48,40 @@
           </div>
 
         <% else %>
-          <%= link_to :new_user_session do %>
-            <button type="button" id="login-button" class=" log-in-button mr-2 text-white bg-slate-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-              Log in
+          <div class="flex justify-center items-end">
+            <%= link_to :new_user_session do %>
+              <button type="button" id="login-button" class="log-in-button <%= button_styles %>">
+                Log in
+              </button>
+            <% end %>
+            <span class="nav-state <%= button_styles %>" data-action="click->general#showStatemodal">
+              Products Locations
+        </span>
+            <button id="open-menu-toggle" data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false" data-action="click->general#menubar_toggle">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+              </svg>
             </button>
-          <% end %>
+
+            <button id="closed-menu-toggle" data-collapse-toggle="navbar-sticky" type="button" class="hidden  inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false" data-action="click->general#menubar_toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                <defs>
+                  <style>.cls-1 {
+                      fill: #35353d;
+                  }</style>
+                </defs>
+                <title>Asset 56</title>
+                <g id="Layer_2" data-name="Layer 2">
+                  <g id="Layer_1-2" data-name="Layer 1">
+                    <path class="cls-1" d="M56,0H8A8,8,0,0,0,0,8V56a8,8,0,0,0,8,8H56a8,8,0,0,0,8-8V8A8,8,0,0,0,56,0Zm2.67,56A2.68,2.68,0,0,1,56,58.67H8A2.68,2.68,0,0,1,5.33,56V8A2.68,2.68,0,0,1,8,5.33H56A2.68,2.68,0,0,1,58.67,8Z" id="id_101" style="fill: rgb(127, 149, 153);"></path>
+                    <path class="cls-1" d="M47.08,43.31,35.77,32,47.08,20.69a2.67,2.67,0,1,0-3.77-3.77L32,28.23,20.69,16.92a2.67,2.67,0,1,0-3.77,3.77L28.23,32,16.92,43.31a2.67,2.67,0,1,0,3.77,3.77L32,35.77,43.31,47.08a2.67,2.67,0,0,0,3.77-3.77Z" id="id_102" style="fill: rgb(129, 153, 158);"></path>
+                  </g>
+                </g>
+              </svg>
+            </button>
+          </div>
         <% end %>
-
-        <button id="open-menu-toggle" data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false" data-action="click->general#menubar_toggle">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-          </svg>
-        </button>
-
-        <button id="closed-menu-toggle" data-collapse-toggle="navbar-sticky" type="button" class="hidden  inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false" data-action="click->general#menubar_toggle">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-          <defs>
-            <style>.cls-1 {
-                fill: #35353d;
-            }</style>
-          </defs>
-          <title>Asset 56</title>
-          <g id="Layer_2" data-name="Layer 2">
-            <g id="Layer_1-2" data-name="Layer 1">
-              <path class="cls-1" d="M56,0H8A8,8,0,0,0,0,8V56a8,8,0,0,0,8,8H56a8,8,0,0,0,8-8V8A8,8,0,0,0,56,0Zm2.67,56A2.68,2.68,0,0,1,56,58.67H8A2.68,2.68,0,0,1,5.33,56V8A2.68,2.68,0,0,1,8,5.33H56A2.68,2.68,0,0,1,58.67,8Z" id="id_101" style="fill: rgb(127, 149, 153);"></path>
-              <path class="cls-1" d="M47.08,43.31,35.77,32,47.08,20.69a2.67,2.67,0,1,0-3.77-3.77L32,28.23,20.69,16.92a2.67,2.67,0,1,0-3.77,3.77L28.23,32,16.92,43.31a2.67,2.67,0,1,0,3.77,3.77L32,35.77,43.31,47.08a2.67,2.67,0,0,0,3.77-3.77Z" id="id_102" style="fill: rgb(129, 153, 158);"></path>
-            </g>
-          </g>
-        </svg>
-        </button>
 
       </div>
     </div>
