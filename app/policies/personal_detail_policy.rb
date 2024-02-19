@@ -1,4 +1,4 @@
-class ProductPolicy < ApplicationPolicy
+class  PersonalDetailPolicy < ApplicationPolicy
   include PunditHelper
   attr_reader :user, :record
 
