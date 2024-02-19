@@ -18,7 +18,7 @@ class Product < ApplicationRecord
 
   def images_as_thumbnail
       images.map do |image|
-        image.variant(resize_to_limit: [200, 200]).processed
+        image.variant(resize_to_fit: [200, 200]).processed
       end
   end
 
