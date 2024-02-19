@@ -14,7 +14,7 @@ class UserRolesController < AdminController
     user_id = User.find_by_email(user_role_params[:user_id]).id
     role_id = params[:role_id]
     user_role = UserRole.find_by(user_id: user_id, role_id: role_id)
-    raise ErrorDefinations::DuplicateRecord, "user already has this role" if user_role.present?
+    raise ErrorInstantiation::DuplicateRecord, "user already has this role" if user_role.present?
 
     @user_role = UserRole.new(user_id:, role_id:)
     respond_to do |format|

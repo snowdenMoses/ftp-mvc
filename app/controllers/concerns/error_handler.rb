@@ -5,7 +5,7 @@ module ErrorHandler
   included do
     rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
     rescue_from ActiveRecord::RecordNotFound, with: :no_record
-    rescue_from ErrorDefinations::DuplicateRecord, with: :record_not_unique
+    rescue_from ErrorInstantiation::DuplicateRecord, with: :record_not_unique
   end
 
   def user_not_authorized
