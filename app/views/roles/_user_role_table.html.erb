@@ -1,0 +1,40 @@
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <% if records.any? %>
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th scope="col" class="px-6 py-3 text-lg font-semibold">
+          User
+        </th>
+        <th scope="col" class="px-6 py-3 text-lg font-semibold">
+          Email
+        </th>
+        <th scope="col" class="w-[10%] text-center px-6 py-3 text-lg font-semibold">
+          Action
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <% records.each do |user| %>
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              <%= link_to user&.personal_detail&.full_name, user_path(user) %>
+            </th>
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              <span> <%= user&.email %> </span>
+            </th>
+              <th class="text-center <%=button_styles %> bg-red-500 p-1">
+                  <%= link_to "revoke role", user_role_path(role_id, user_id: user&.id), data: { turbo_method: :delete } %>
+              </th>
+          </tr>
+
+      <% end %>
+    <% else %>
+      <div>No user has this role</div>
+    <% end %>
+
+
+    </tbody>
+
+  </table>
+</div>

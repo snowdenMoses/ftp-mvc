@@ -5,9 +5,13 @@ class ProductPolicy < ApplicationPolicy
   def initialize(user, record)
     @user = user
     @record = record
-    @authorized_roles = ["admin", "vendor"]
+    @authorized_roles = ["super_admin", "admin", "vendor"]
   end
 
+
+  def show?
+    is_authorized_role?(@authorized_roles, @user)
+  end
 
   def index?
     is_authorized_role?(@authorized_roles, @user)

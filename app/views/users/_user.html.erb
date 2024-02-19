@@ -23,6 +23,15 @@
     <%= user&.personal_detail&.city %>
   </p>
 
+  <% if user&.roles.any? %>
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Role</strong>
+      <span class="p-2 border-2 border-slate-600">
+        <%= user&.roles.map(&:title).join(", ") %>
+        </span>
+    </p>
+  <% end %>
+
 
   <% if action_name != "show" %>
     <%#= link_to "Show this product", product, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>

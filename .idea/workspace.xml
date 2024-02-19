@@ -5,10 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d28fa48f-b1ab-431d-bc56-737a26d7ba27" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/controllers/concerns/error_definations.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/policies/personal_detail_policy.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/personal_details/_form.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/personal_details/edit.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/roles/_form.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/roles/_role.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/roles/_table.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/roles/_user_role_table.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/roles/index.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/roles/new.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/roles/show.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/user_roles/_form.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/user_roles/new.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../abubakar.bio/.idea/abubakar.bio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../abubakar.bio/.idea/abubakar.bio.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/images/home.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/admin_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/admin_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/concerns/error_handler.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/concerns/error_handler.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/concerns/json_response.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/concerns/json_response.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/role.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/role.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/policies/category_policy.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/policies/category_policy.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/policies/product_policy.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/policies/product_policy.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/products/_table.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/products/_table.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/admin/_sidebar.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/_sidebar.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/admin/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shared/_landing_page.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_landing_page.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shared/_sidebar.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_sidebar.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/users/_user.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/_user.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,33 +60,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/snowdenmoses/Documents/Personal/ftp_mvc/app/policies&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/snowdenmoses/Documents/Personal/ftp_mvc/app/views/user_roles",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ruby.structure.view.model.defaults.configured": "true",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/views/user_roles" />
+      <recent name="$PROJECT_DIR$/app/views/roles" />
       <recent name="$PROJECT_DIR$/app/policies" />
-      <recent name="$PROJECT_DIR$/app/views/shared" />
-      <recent name="$PROJECT_DIR$/../abubakar.bio/images" />
       <recent name="$PROJECT_DIR$/app/assets/images" />
-      <recent name="$PROJECT_DIR$/bin" />
+      <recent name="$PROJECT_DIR$/app/views/shared" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/views" />
@@ -134,7 +162,8 @@
       <workItem from="1707665866939" duration="19718000" />
       <workItem from="1707784549774" duration="6739000" />
       <workItem from="1707845709878" duration="74230000" />
-      <workItem from="1708252486101" duration="10072000" />
+      <workItem from="1708252486101" duration="24019000" />
+      <workItem from="1708289641946" duration="18831000" />
     </task>
     <servers />
   </component>

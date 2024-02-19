@@ -1,0 +1,6 @@
+<div class="p-4 sm:ml-64 w-full">
+  <h1 class="font-bold text-4xl"><%="#{@current_role.split("_").join(" ").capitalize} Role" %></h1>
+  <%= render partial: "form", locals: {user_role: @user_role, role_id: @role_id} %>
+
+  <%= link_to "Back to roles", roles_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+</div>

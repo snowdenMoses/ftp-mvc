@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   # authenticated :user do
   #   root to: "admin#index", as: :admin_root
   # end
-  # root  to: "admin#index", as: :admin_root, :constraints => lambda { |request| request.env['warden'].user&.roles&.map(&:title)&.include?("admin") }
-  root to: "admin_analytics#index", as: :admin_root, :constraints => lambda { |request| request.env['warden'].user&.roles&.map(&:title)&.include?("admin") }
+  root  to: "admin#index", as: :admin_root, :constraints => lambda { |request| request.env['warden'].user&.roles&.map(&:title)&.include?("admin") || request.env['warden'].user&.roles&.map(&:title)&.include?("super_admin") }
+  # root to: "admin_analytics#index", as: :admin_root, :constraints => lambda { |request| (request.env['warden'].user&.roles&.map(&:title) & ["admin", "super_admin"]).any? }
   root to: "home#index", as: :home_root
 
   resources :personal_details, only: [:index, :show, :edit, :update]
@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   resources :dashboard, only: :index
   resources :profile_information, only: :index
   resources :about_us, only: :index
+  resources :roles
+  resources :user_roles
   resources :products do
     resources :comments, module: :products
   end

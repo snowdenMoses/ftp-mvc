@@ -4,5 +4,5 @@ class Role < ApplicationRecord
 
   validates_presence_of :title
 
-  normalizes :title, with: -> title { title.downcase}
+  normalizes :title, with: -> title { title.split(" ").join("_").downcase }
 end

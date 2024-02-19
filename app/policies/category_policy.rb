@@ -5,7 +5,7 @@ class CategoryPolicy < ApplicationPolicy
   def initialize(user, record)
     @user = user
     @record = record
-    @authorized_roles = ["admin"]
+    @authorized_roles = ["admin", "super_admin"]
   end
 
 

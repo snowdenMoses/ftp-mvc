@@ -1,0 +1,23 @@
+<%= form_with(model: user_role, url: user_roles_path(role_id: role_id), class: "contents") do |form| %>
+  <% if user_role.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(user_role.errors.count, "error") %> prohibited this user_role from being saved:</h2>
+
+      <ul>
+        <% user_role.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group my-5">
+    <%= form.label :user_id, class: "mb-2 block"%>
+    <%= form.select :user_id, options_for_select(PersonalDetail.includes(:user).all.map{ |personal_detail| [personal_detail&.full_name, personal_detail&.user&.email] }) %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit "Add User", class: "rounded-lg py-3 px-5 bg-slate-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>
+
