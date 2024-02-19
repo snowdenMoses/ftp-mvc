@@ -5,38 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d28fa48f-b1ab-431d-bc56-737a26d7ba27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controllers/concerns/error_definations.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/policies/personal_detail_policy.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/personal_details/_form.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/personal_details/edit.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/roles/_form.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/roles/_role.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/roles/_table.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/roles/_user_role_table.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/roles/index.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/roles/new.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/roles/show.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/user_roles/_form.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/user_roles/new.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../abubakar.bio/.idea/abubakar.bio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../abubakar.bio/.idea/abubakar.bio.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/images/home.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/admin_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/admin_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/concerns/error_handler.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/concerns/error_handler.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/concerns/json_response.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/concerns/json_response.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/role.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/role.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/policies/category_policy.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/policies/category_policy.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/policies/product_policy.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/policies/product_policy.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/_sidebar.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/_sidebar.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/shared/_landing_page.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_landing_page.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/shared/_sidebar.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shared/_sidebar.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/_user.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/_user.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +132,7 @@
       <workItem from="1707784549774" duration="6739000" />
       <workItem from="1707845709878" duration="74230000" />
       <workItem from="1708252486101" duration="24019000" />
-      <workItem from="1708289641946" duration="18831000" />
+      <workItem from="1708289641946" duration="19718000" />
     </task>
     <servers />
   </component>

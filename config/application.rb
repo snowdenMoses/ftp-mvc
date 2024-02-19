@@ -11,7 +11,7 @@ module FtpMvc
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-    # config.autoloader = :classic
+    config.autoloader = :classic
     # config.assets.precompile += %w( application.css )
 
     # Configuration for the application, engines, and railties goes here.
