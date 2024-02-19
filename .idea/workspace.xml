@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d28fa48f-b1ab-431d-bc56-737a26d7ba27" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../abubakar.bio/.idea/abubakar.bio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../abubakar.bio/.idea/abubakar.bio.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/concerns/error_definations.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/concerns/error_instantiation.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/concerns/error_handler.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/concerns/error_handler.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/user_roles_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/user_roles_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/admin/_sidebar.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/_sidebar.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +136,7 @@
       <workItem from="1707784549774" duration="6739000" />
       <workItem from="1707845709878" duration="74230000" />
       <workItem from="1708252486101" duration="24019000" />
-      <workItem from="1708289641946" duration="21420000" />
+      <workItem from="1708289641946" duration="22633000" />
     </task>
     <servers />
   </component>

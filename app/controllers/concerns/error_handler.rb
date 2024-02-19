@@ -20,3 +20,8 @@ module ErrorHandler
     json_error_response(message, 400 )
   end
 end
+
+
+module ErrorInstantiation
+  class DuplicateRecord < StandardError; end
+end
