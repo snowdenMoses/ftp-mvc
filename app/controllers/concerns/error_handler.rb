@@ -1,7 +1,6 @@
 module ErrorHandler
   extend ActiveSupport::Concern
   include JsonResponse
-  include ErrorDefinations
 
   included do
     rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
