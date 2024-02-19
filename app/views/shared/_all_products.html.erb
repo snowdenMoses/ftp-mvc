@@ -3,7 +3,9 @@
     <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <div class="flex justify-center">
       <%= link_to customers_product_path(product) do %>
-        <%= product.images.any? ? thumbnail_image_tag(product.images.first) : image_tag("https://via.placeholder.com/200") %>
+          <% puts "#{ product.images_as_thumbnail } pictures here" %>
+        <%#= product.images.any? ? thumbnail_image_tag(product.images.first) : image_tag("https://via.placeholder.com/200") %>
+        <%= product.images.any? ? image_tag(product.images_as_thumbnail.first) : image_tag("https://via.placeholder.com/200") %>
       <% end %>
       </div>
       <div class="px-5 pb-5">
