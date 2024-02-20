@@ -7,9 +7,9 @@
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 flex flex-col product-details-container">
       <div class=" bg-white border-gray-200 shadow h-auto flex rounded-lg">
         <% if product.images.any? %>
-          <% product.images.each do |image| %>
+          <% product.images_as_thumbnail.each do |image| %>
             <div class="flex flex-col bg-white border border-gray-200 rounded-tl-lg rounded-br-lg shadow">
-              <%= image_tag(image, class: "product-details-image px-2 py-2 object-cover") %>
+              <%= image_tag(image, class: "product-details-image px-2 py-2") %>
             </div>
           <% end %>
         <% else %>
