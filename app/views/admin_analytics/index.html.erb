@@ -1,13 +1,39 @@
 <div class="p-4 sm:ml-64 w-full">
   <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 row-span-3">
+      <div class="">
+        <span> Number of Vendors </span>
+        <div class="flex justify-center items-center rounded-lg border-2 border-slate-600 bg-slate-600 w-full h-20 text-white text-center">
+          <%= @number_of_vendors  %>
+        </div>
+      </div>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 row-span-3">
       <div class="">
         <span> Top 5 Vendors </span>
         <canvas data-controller="admin" height="400px" id="top-five-products" class="w-full" data-admin-data="<%= @top_five_vendors.to_json %>"></canvas>
       </div>
+
       <div>
         <span> Top 5 Favourited Products </span>
         <canvas data-controller="admin" height="400px" id="top-five-favourited" data-admin-data="<%= @top_five_favourited_products.to_json %>" class="w-full"></canvas>
+      </div>
+
+      <div>
+        <span> Top 5 Products With Must Comments </span>
+        <canvas data-controller="admin" height="400px" id="top-five-favourited" data-admin-data="<%= @top_five_commented_products.to_json %>" class="w-full"></canvas>
+      </div>
+
+      <div>
+        <span> Top 5 States With Most Products </span>
+        <canvas data-controller="admin" height="400px" id="top-five-favourited" data-admin-data="<%= @top_five_products_by_states.to_json %>" class="w-full"></canvas>
+      </div>
+
+      <div>
+        <span> User's Gender Ratio </span>
+        <div class="flex items-center justify-center rounded w-full dark:bg-gray-800">
+          <%= pie_chart PersonalDetail.group(:gender).count %>
+        </div>
       </div>
     </div>
 
@@ -70,6 +96,6 @@
 <!--          </svg>-->
 <!--        </p>-->
 <!--      </div>-->
-    </div>
+<!--    </div>-->
   </div>
 </div>

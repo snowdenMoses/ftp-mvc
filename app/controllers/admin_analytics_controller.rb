@@ -5,7 +5,7 @@ class AdminAnalyticsController < AdminController
         JOIN personal_details pd on pd.user_id = u.id
         Join user_roles ur on ur.user_id = u.id
         Join roles r on r.id = ur.role_id
-        WHERE r.title = 'admin'
+        WHERE r.title = 'vendor'
         GROUP BY full_name, u.email
         order by products_count desc
         limit 5;")
@@ -18,9 +18,31 @@ class AdminAnalyticsController < AdminController
       GROUP BY p.name
       order by products_count desc
       limit 5;")
-      @top_five_favourited_products = formatdata_for_chartjs(top_five_favourited_products.to_a,
-                                                             "products", "name",
-                                                             "products_count")
+    @top_five_favourited_products = formatdata_for_chartjs(top_five_favourited_products.to_a,
+                                                           "products", "name",
+                                                           "products_count")
+
+    top_five_commented_products = Product.find_by_sql("Select count(p.id) as products_count, p.name from products p
+      JOIN comments cmt on cmt.commentable_id = p.id
+      GROUP BY p.name
+      order by products_count desc
+      limit 5;;")
+    @top_five_commented_products = formatdata_for_chartjs(top_five_commented_products.to_a,
+                                                          "products", "name",
+                                                          "products_count")
+
+
+    top_five_products_by_states = Product.find_by_sql("Select count(p.id) as products_count, s.name from products p
+    JOIN states s on s.id = p.state_id
+    GROUP BY s.name
+    order by products_count desc
+    limit 5;")
+
+    @top_five_products_by_states = formatdata_for_chartjs(top_five_products_by_states.to_a,
+                                                           "products", "name",
+                                                           "products_count")
+
+    @number_of_vendors = UserRole.includes(:role).where(role: { title: "vendor" }).size
   end
 
   private
