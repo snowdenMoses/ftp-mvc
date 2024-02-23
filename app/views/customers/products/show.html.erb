@@ -20,14 +20,14 @@
     </div>
 
     <div class="w-1/2">
-    <div class="flex flex-col justify-between p-4 leading-normal">
-      <h5 class="mb-2 capitalize text-lg font-bold tracking-tight text-gray-900 dark:text-white"><%= product.name %></h5>
-      <p class="mb-3 font-semibold text-sm text-gray-700 dark:text-gray-400"><%= currency_formatter(product.price) %></p>
-    </div>
-    <div class="flex flex-col justify-between p-4 leading-normal">
-      <h5 class="mb-2 capitalize text-lg font-bold tracking-tight text-gray-900 dark:text-white">Description</h5>
-      <p class="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400"><%= product&.description %></p>
-    </div>
+      <div class="flex flex-col justify-between p-4 leading-normal">
+        <h5 class="mb-2 capitalize text-lg font-bold tracking-tight text-gray-900 dark:text-white"><%= product.name %></h5>
+        <p class="mb-3 font-semibold text-sm text-gray-700 dark:text-gray-400"><%= currency_formatter(product.price) %></p>
+      </div>
+      <div class="flex flex-col justify-between p-4 leading-normal">
+        <h5 class="mb-2 capitalize text-lg font-bold tracking-tight text-gray-900 dark:text-white">Description</h5>
+        <p class="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400"><%= product&.description %></p>
+      </div>
     </div>
 
 
@@ -42,27 +42,27 @@
             <li class="py-3 sm:py-4">
 
               <% if current_user %>
-              <div class="flex items-center">
-                <div class="flex-shrink-0 mr-2">
-                  <%= initials_avatar(vendor&.personal_detail&.full_name) if vendor&.personal_detail.present? %>
+                <div class="flex items-center">
+                  <div class="flex-shrink-0 mr-2">
+                    <%= initials_avatar(vendor&.personal_detail&.full_name) if vendor&.personal_detail.present? %>
+                  </div>
+                  <div class="flex-1 min-w-0 ms-4">
+                    <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                      <%= vendor&.personal_detail&.full_name %>
+                    </p>
+                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                      <%= vendor&.email %>
+                    </p>
+                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                      <%= vendor&.personal_detail&.phone_number %>
+                    </p>
+                  </div>
                 </div>
-                <div class="flex-1 min-w-0 ms-4">
-                  <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    <%= vendor&.personal_detail&.full_name %>
-                  </p>
-                  <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                    <%= vendor&.email %>
-                  </p>
-                  <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                    <%= vendor&.personal_detail&.phone_number %>
-                  </p>
-                </div>
-              </div>
-                <% else %>
+              <% else %>
                 <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
                   Log in to see vendor's information
                 </p>
-                <% end %>
+              <% end %>
             </li>
           </ul>
         </div>
